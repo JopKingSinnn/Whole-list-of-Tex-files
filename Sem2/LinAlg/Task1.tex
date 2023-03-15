@@ -1,3 +1,48 @@
+\documentclass[a4paper,12pt]{article} % добавить leqno в [] для нумерации слева
+\usepackage[a4paper,top=1.3cm,bottom=2cm,left=1.5cm,right=1.5cm,marginparwidth=0.75cm]{geometry}
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в фомулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\usepackage{siunitx} % значок градуса
+
+\usepackage{enumitem} % крутые списки
+
+\usepackage{relsize} % увеличение формул с помощью \mathlarger{}
+
+\usepackage{graphicx} % вставка фотографий
+\graphicspath{ {./images} } % путь к папке с фотографиями
+\usepackage{wrapfig} % текст вместе с фотографией
+
+\usepackage{tikz} % рисунки
+\usetikzlibrary{shapes.geometric} % для кривых множественных порядков
+
+\usepackage{pst-math,pst-plot} % ещё один графический редактор
+
+\usepackage{pgfplots} % построение графиков внутри латеха
+\usepgfplotslibrary{external}
+\tikzexternalize % ускорение работы при загрузке графиков
+
+\usepackage{multirow} % объединенные ячейки в таблицах
+\usepackage{multicol} % текст разделенный на неколько колонн
+
+\usepackage{ragged2e} % выравневание текста
+
+\usepackage{wrapfig}
+\usepackage{tabularx} % более гибкие таблицы
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+
+%% Шрифты
+\usepackage{dsfont}
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+\usepackage{bbold}
+
 \begin{document}
 
 \begin{titlepage}
