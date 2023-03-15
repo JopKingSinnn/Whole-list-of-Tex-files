@@ -1,0 +1,254 @@
+\documentclass[a4paper,12pt]{article} % добавить leqno в [] для нумерации слева
+\usepackage[a4paper,top=1.3cm,bottom=2cm,left=1.5cm,right=1.5cm,marginparwidth=0.75cm]{geometry}
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в фомулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\usepackage{enumitem} % крутые списки
+
+\usepackage{relsize} % увеличение формул с помощью \mathlarger{}
+
+\usepackage{graphicx} % вставка фотографий
+\graphicspath{ {./images} } % путь к папке с фотографиями
+\usepackage{wrapfig} % текст вместе с фотографией
+
+\usepackage{tikz} % рисунки
+\usetikzlibrary{shapes.geometric} % для кривых множественных порядков
+
+\usepackage{pst-math,pst-plot} % ещё один графический редактор
+
+\usepackage{pgfplots} % построение графиков внутри латеха
+\usepgfplotslibrary{external}
+\tikzexternalize % ускорение работы при загрузке графиков
+
+\usepackage{multirow} % объединенные ячейки в таблицах
+\usepackage{multicol} % текст разделенный на неколько колонн
+
+\usepackage{ragged2e} % выравневание текста
+
+\usepackage{wrapfig}
+\usepackage{tabularx} % более гибкие таблицы
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+
+%% Шрифты
+\usepackage{euscript}	 % Шрифт Евклид
+\usepackage{mathrsfs} % Красивый матшрифт
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Многомерный анализ, интегралы и ряды}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Второй семестр\\
+        Первое задание
+            
+        \vspace{1.5cm}
+            
+        \textbf{Бородулин Егор \\ Б02-204}
+        
+        \vfill
+        
+        \includegraphics[scale = 0.55]{images/DGAP.jpg}
+        
+        \vspace{0.8cm}
+            
+        \Large
+        ФОПФ\\
+        МФТИ\\
+        Долгопрудный\\
+        8.12.2023
+            
+    \end{center}
+\end{titlepage}
+\section*{C3.3.3}6)
+$$f(x,y,z)=\left(\frac{x}{y}\right)^{z}$$
+\begin{multicols}{3}
+$$\frac{\partial f}{\partial x}=\frac{z}{x}f$$
+$$\frac{\partial f}{\partial y}=-\frac{z}{y}f$$
+$$\frac{\partial f}{\partial z}=f\ln \frac{x}{y}$$
+\end{multicols}
+\section*{C3.3.44}2)
+$$f(x,y)=\arctg\left(\frac{y}{x}\right)\quad\quad\quad M(1/2;\sqrt{3}/2)\quad\quad\quad (x-1)^2+y^2=1$$
+Так как радиус перпендикулярен касательной, то направлением нормали будет вектор (единичный) $\tau = (-1/2;\sqrt{3}/2)$
+$$f_{\tau}=(\tau,grad(f(M)))=\frac{1}{x^2+y^2}(y/2+x\sqrt{3}/2)|_{M}=\frac{\sqrt{3}}{2}$$
+\section*{C3.3.19}2)
+$$f(x,y)=|y|\sin x$$
+$$|\Delta f|\le|yx|\leq\rho^2$$
+$$\Delta f=o(\rho)$$
+4)$$f(x,y)=\ch\sqrt[5]{x^2y}$$
+$$|\Delta f|=|\ch\sqrt[5]{x^2y}-1|=|2\sh^2\frac{\sqrt[5]{x^2y}}{2}|\le|x^{\frac{4}{5}}y^{\frac{2}{5}}|\le\rho$$
+$$\Delta f=o(\rho)$$
+\section*{C3.3.20}1)$$f(x,y)=\sqrt{|xy|}$$
+$$y=x\Rightarrow f(x,y)=|x|\ne o(\rho)$$
+3) Аналогично
+\section*{T.1}a)$$f(x,y)=\tg\sqrt[3]{x^2y^2}+e^{x+y}$$
+$$|\Delta f|=|\tg\sqrt[3]{x^2y^2}+e^{x+y}-1|\ge|x^{2/3}y^{2/3}+x+y|\overset{y=x}{\Rightarrow}|x^{4/3}+2x|\ne o(\rho)$$
+b) $$f(x,y)=\sin(x^{\alpha}y^{1/3})$$
+$$|\Delta f|=|\sin(x^{\alpha}y^{1/3})|\le|x^{\alpha}y^{1/3}|\le\rho^{\alpha+\frac{1}{3}}\Rightarrow |\Delta f|=o(\rho)\Leftrightarrow\alpha>\frac{2}{3}$$
+\section*{C3.4.4}$$\frac{\partial^2 f}{\partial x\partial y}=\frac{\partial}{\partial y}-y=-1$$
+$$\frac{\partial^2 f}{\partial y\partial x}=\frac{\partial}{\partial x}x=1$$
+\section*{C3.4.8}2)$$f(x,y)=\ln(x+y)$$
+$$\frac{\partial^3 f}{\partial y\partial x^2}=\frac{\partial^2 f}{\partial y\partial x}\frac{1}{x+y}=\frac{\partial f}{\partial y}\frac{1}{(x+y)^2}=\frac{1}{(x+y)^3}$$
+\section*{C3.4.19}$$d^2f=\frac{\partial^2f}{\partial x^2}dx^2+\frac{\partial^2f}{\partial y^2}dy^2+\frac{\partial^2f}{\partial z^2}dz^2+2\frac{\partial^2f}{\partial x\partial y}dydx+2\frac{\partial^2f}{\partial z\partial x}dxdz+2\frac{\partial^2f}{\partial y\partial z}dzdy$$1)$$f(x,y,z)=\frac{z}{x^2+y^2}$$
+$$\frac{2zx^2+2zy^2}{(x^2+y^2)^3}dx^2+\frac{2zy^2+2zx^2}{(x^2+y^2)^3}dy^2+0dz^2+\frac{8xyz}{(x^2+y^2)^2}dxdy-\frac{4x}{(x^2+y^2)^2}dxdz-\frac{4y}{(x^2+y^2)^2}dydz=$$
+$$=\frac{1}{2}dx^2+\frac{1}{2}dy^2+2dxdy-dxdz-dydz$$
+2)$$f(x,y,z)=\left(\frac{x}{y}\right)^{1/z}$$
+$$f\frac{z^2-z}{x^2}dx^2+f\frac{z^2+z}{y^2}dy^2+f\left(\ln^2z-\frac{1}{z}\right)dz^2-f\frac{z^2}{zy}dxdy-f\frac{z\ln z}{x}dxdz-f\frac{z\ln z}{y}dydz=$$
+$$=2dy^2-2dxdy-2dxdz+dydz$$
+\section*{C3.4.25}2) $$f(x,y,z)=\ln (x+y+z)$$
+$$d^nf=\sum C^{\alpha,\beta,\gamma}_{n}\frac{\partial^nf}{\partial x^{\alpha}\partial y^{\beta}\partial z^{\gamma}}dx^{\alpha}dy^{\beta}dx^{\gamma}=\frac{\partial^nf}{\partial x^{\alpha}}\sum C^{\alpha,\beta,\gamma}_{n}dx^{\alpha}dy^{\beta}dx^{\gamma}=\frac{\partial^nf}{\partial x^n}(dx+dy+dz)^{n}=$$
+$$=\frac{(-1)^{n-1}(n-1)!}{(x+y+z)^{n-1}}(dx+dy+dz)^{n}$$
+\section*{C3.4.27}$$\varphi(x,y,z)=f(u)$$
+$$d^2\varphi=d^2f=d(df)=d(f^{\prime}du)=df^{\prime}du+f^{\prime}d^2u=f^{\prime\prime}du^2+f^{\prime}d^2u$$
+2)$$u=\sqrt{x^2+y^2}$$
+$$du=\frac{x}{\sqrt{x^2+y^2}}dx+\frac{y}{\sqrt{x^2+y^2}}dy$$
+$$d^2u=\frac{x^2}{\sqrt{(x^2+y^2)^3}}dx^2-2\frac{xy}{\sqrt{(x^2+y^2)^3}}dxdy+\frac{y^2}{\sqrt{(x^2+y^2)^3}}dy^2$$
+$$d^2\varphi=f^{\prime\prime}\frac{(xdx+ydy)^2}{x^2+y^2}+f^{\prime}\frac{(xdx-ydy)^2}{\sqrt{(x^2+y^2)^3}}$$
+3)$$u=xyz$$
+$$du=yzdx+xzdy+xydz$$
+$$d^2u=2(xdydz+ydxdz+zdxdy)$$
+$$d^2\varphi=f^{\prime\prime}(yzdx+xzdy+xydz)^2+2f^{\prime}(xdydz+ydxdz+zdxdy)$$
+\section*{C3.4.72}
+$$f(x,y,z)=\cos x\cos y\cos z-\cos (x+y+z)$$
+$$\frac{\partial f(0,0,0)}{\partial x}=\frac{\partial f(0,0,0)}{\partial y}=\frac{\partial f(0,0,0)}{\partial z}=\frac{\partial^2 f(0,0,0)}{\partial x^2}=\frac{\partial^2 f(0,0,0)}{\partial y^2}=\frac{\partial^2 f(0,0,0)}{\partial z^2}=0$$
+$$\frac{\partial^2 f(0,0,0)}{\partial x\partial y}=\frac{\partial^2 f(0,0,0)}{\partial y\partial x}=\frac{\partial^2 f(0,0,0)}{\partial y\partial z}=\frac{\partial^2 f(0,0,0)}{\partial z\partial y}=\frac{\partial^2 f(0,0,0)}{\partial x\partial z}=\frac{\partial^2 f(0,0,0)}{\partial z\partial x}=1$$
+$$f=xy+yz+zx+o(\rho^2)$$
+\section*{C3.4.73}
+$$f(x,y,z)=\ln(xy+z^2)$$
+$$\frac{\partial f(0,0,1)}{\partial x}=\frac{\partial f(0,0,1)}{\partial y}=\frac{\partial^2 f(0,0,1)}{\partial y^2}=\frac{\partial^2 f(0,0,1)}{\partial x^2}=0$$
+$$\frac{\partial f(0,0,1)}{\partial z}=2$$
+$$\frac{\partial^2 f(0,0,1)}{\partial z^2}=-2$$
+$$\frac{\partial^2 f(0,0,0)}{\partial x\partial y}=\frac{\partial^2 f(0,0,0)}{\partial y\partial x}=1$$
+$$\frac{\partial^2 f(0,0,0)}{\partial y\partial z}=\frac{\partial^2 f(0,0,0)}{\partial z\partial y}=\frac{\partial^2 f(0,0,0)}{\partial x\partial z}=\frac{\partial^2 f(0,0,0)}{\partial z\partial x}=0$$
+$$f=2(z-1)-(z-1)^2+xy+o(\rho^2)$$
+\section*{T2}a)$2^{|\mathbb{R}|}$
+b) 4 ($\pm|x|,\pm x$)
+c) 2 ($|x|$, $x$)
+d) 1 ($x$)
+\section*{C3.3.66}$$F(x,y,z,u)=u^3-3(x+y)u^2+z^3=0$$
+$$f=u(x,y,z)$$
+$$\frac{\partial F}{\partial x}=\frac{\partial F}{\partial x}=-3u^2$$
+$$\frac{\partial F}{\partial z}=3z^2$$
+$$\frac{\partial F}{\partial u}=3u^2-6(x+y)u$$
+$$du=\frac{\partial u}{\partial x}dx+\frac{\partial u}{\partial y}dy+\frac{\partial u}{\partial z}dz=-\frac{F^{\prime}_{x}}{F^{\prime}_{u}}dx-\frac{F^{\prime}_{y}}{F^{\prime}_{u}}dy-\frac{F^{\prime}_{z}}{F^{\prime}_{u}}dz=\frac{u^2(x+y)-z^2dz}{u^2-2(x+y)u}$$
+\section*{C3.3.78}
+$$z=u^3+v^3\quad\quad\quad\quad u+v=x\quad\quad\quad\quad u^2+v^2=y$$
+$$z=u^3+v^3=(u+v)(u^2-uv+v^2)=x(x^2-3\frac{x^2-y}{2})=\frac{3xy-x^3}{2}$$
+$$dz=3\frac{y-x^2}{2}dx+3\frac{x}{2}dy$$
+\section*{C3.3.82}
+2*) $$\frac{\partial x_i(x^0)}{\partial x_{i+1}}=-\frac{f^{\prime}_{x_{i+1}}}{f^{\prime}_{x_{i}}}\Rightarrow\frac{\partial x_n(x^0)}{\partial x_{1}}\prod_{i=1}^{n-1}\frac{\partial x_i(x^0)}{\partial x_{i+1}}=(-1)^n$$
+\section*{C3.3.103}1)
+$$u=x(x^2-3y^2)\quad\quad\quad\quad v=y(3x^2-y^2)$$
+$$\frac{\partial(u,v)}{\partial(x,y)}=\begin{vmatrix*}3x^2-3y^2&-6xy\\6xy&3x^2-3y^2\end{vmatrix*}=9(x^2+y^2)^2$$
+\section*{C3.4.44}2) $$x+y+u=e^{u}\Rightarrow u=\ln(x+y+u)$$
+$$du=\frac{dx+dy+du}{x+y+u}\Rightarrow du=\frac{dx+dy}{x+y+u-1}$$
+$$d^2u=-\frac{(dx+dy)^2+du(dx+dy)}{(x+y+u-1)^2}=\frac{x+y+u}{(1-x-y-u)^3}(dx+dy)^2$$
+3)$$u=\ln(yu-x)$$
+$$du=\frac{udy+ydu-dx}{yu-x}\Rightarrow du=\frac{udy-dx}{yu-y-x}$$
+$$d^2u=\frac{dudy(yu-y-x)-(udy+ydu-dy-dx)(udy-dx)}{(yu-y-x)^2}$$
+\section*{T.3}
+$$\begin{cases}
+u(x,y)=e^{x}\cos y\\
+v(x,y)=e^{x}\sin y
+\end{cases}$$
+$$\frac{\partial(u,v)}{\partial(x,y)}=\begin{vmatrix*}e^{x}\cos y&-e^{x}\sin y\\e^{x}\sin x&e^{x}\cos x\end{vmatrix*}=e^{2x}>0$$
+Докажем, что данное отображение не является взаимно однозначным.
+$$\begin{cases}
+u(x_1,y_1)=e^{x_1}\cos y_1=e^{x_2}\cos y_2=u(x_2,y_2)\\
+v(x,y)=e^{x_1}\sin y_1=e^{x_2}\sin y_2=v(x_2,y_2)
+\end{cases}$$
+Данное выражение выполняется, например, когда $\tg y_1=\tg y_2\Leftrightarrow y_1=\pi+y_2$\\
+Также заметим, что $v=u\tg y$, так что $f:\mathbb{R}^2\to\mathbb{R}^2/\{0\}$
+\section*{T.4}
+$$(x_1,x_2)\overset{g}{\mapsto}(u_1,u_2)\overset{h}{\mapsto}(y_1,y_2)$$
+Пусть:
+$$\frac{\partial(u_1,u_2)}{\partial(x_1,x_2)}=\begin{vmatrix*}a&b\\0&1\end{vmatrix*}\quad\quad\quad\quad\frac{\partial(y_1,y_2)}{\partial(u_1,u_2)}=\begin{vmatrix*}1&0\\c&d\end{vmatrix*}$$
+Тогда:
+$$\frac{\partial(y_1,y_2)}{\partial(x_1,x_2)}=\begin{vmatrix*}1&2x_2\\2x_1&1\end{vmatrix*}=\begin{vmatrix*}1&0\\c&d\end{vmatrix*}\begin{vmatrix*}a&b\\0&1\end{vmatrix*}=\begin{vmatrix*}a&b\\ac&bc+d\end{vmatrix*}=\frac{\partial(y_1,y_2)}{\partial(u_1,u_2)}\frac{\partial(u_1,u_2)}{\partial(x_1,x_2)}$$
+Решая систему получаем:
+$$a=1\quad\quad\quad\quad b=2x_2\quad\quad\quad\quad c=2x_1\quad\quad\quad\quad d=1-4x_1x_2$$
+\section*{C2.1.2}15)$$\int\sin^2\frac{x}{2}dx=\int\frac{1-\cos x}{2}dx=\frac{x}{2}-\frac{\sin x}{2}+C$$
+16)$$\int\ctg^2xdx=\int\frac{\cos^2x}{\sin^2x}dx=\int\left(\frac{1}{\sin^2x}-1\right)dx=-\ctg x - x+C$$
+\section*{C2.1.12}2)$$\int x\sqrt{x+1}dx=\int(t-1)\sqrt{t}dt=\frac{2t^{5/2}}{5}-\frac{2t^{3/2}}{3}+C=\frac{2\sqrt{(x+1)^5}}{5}+\frac{2\sqrt{(x+1)^3}}{3}+C$$
+\section*{C2.1.17}4)$$\int x\ln xdx=\frac{1}{2}\int\ln xd(x^2)=\frac{1}{2}x^2\ln x-\int xdx=\frac{x^2}{2}\left(\ln x-\frac{1}{2}\right)\ln+C$$
+\section*{C2.1.24}3)$$\int e^{ax}\sin(bx)dx=\frac{1}{a}e^{ax}\sin(bx)-\frac{b}{a^2}\int e^{ax}\cos(bx)dx=\frac{1}{a}e^{ax}\sin(bx)-\frac{b}{a^2}e^{ax}\cos(bx)-\frac{b^2}{a^2}\int e^{ax}\sin(bx)dx$$
+$$\int e^{ax}\sin(bx)dx=e^{ax}\frac{a\sin (bx)-b\cos (bx)}{a^2+b^2}+C$$
+\section*{C2.2.1}4)$$\int\frac{dx}{(x+1)(x-2)}=\frac{1}{3}\int\frac{dx}{x-2}-\frac{1}{3}\int\frac{dx}{x+1}=\frac{1}{3}\ln(x-2)-\frac{1}{3}\ln(x+1)+C$$
+\section*{C2.2.2}1)$$\int\frac{dx}{(x-1)(x+2)(x+3)}=\frac{1}{12}\int\frac{dx}{x-1}-\frac{1}{3}\int\frac{dx}{x+2}+\frac{1}{4}\int\frac{dx}{x+3}=$$
+$$\frac{1}{12}\ln(x-1)-\frac{1}{3}\ln(x+2)+\frac{1}{4}\ln(x+3)+C$$
+\section*{C2.2.3}2)$$\int\frac{(x^2)dx}{(x-1)(x+1)^2}=\frac{3}{4}\int\frac{dx}{x-1}+\frac{1}{4}\int\frac{dx}{x+1}-\frac{3}{2}\int\frac{dx}{(x+1)^2}=$$
+$$=\frac{3}{4}\ln(x-1)+\frac{1}{4}\ln(x+1)+\frac{3}{2(x+1)}+C$$
+\section*{C2.2.4}2)$$\int\frac{dx}{x^3+1}=\frac{1}{3}\int\frac{dx}{x+1}+\frac{1}{3}\int\frac{x-2}{x^2-x+1}dx=$$
+$$\frac{1}{3}\ln(x+1)-\frac{1}{6}\ln(x^2-x+1)+\frac{1}{\sqrt{3}}\arctg\frac{2x-1}{\sqrt{3}}+C$$
+\section*{C2.2.5}2)$$\int\frac{x^4dx}{1-x^4}=-\int dx+\int\frac{dx}{1-x^4}=-x+\frac{1}{2}\left(\int\frac{dx}{x^2+1}+\int\frac{dx}{1-x^2}\right)=$$
+$$=-x+\frac{1}{2}\arctg x+\frac{1}{4}\ln\frac{x+1}{x-1}+C$$
+\section*{C2.3.2}2)$$\int\frac{dx}{3x+\sqrt[3]{x^2}}=\int\frac{t^2dt}{3t^3+t^2}=\int\frac{3dt}{3t+1}=\ln(3t+1)+C=\ln(3\sqrt[3]{x}+1)+C$$
+\section*{C2.3.5}1)$$\int\frac{1-x+x^2}{\sqrt{1+x-x^2}}$$
+$$\frac{1-x+x^2}{\sqrt{1+x-x^2}}=A\sqrt{1+x-x^2}+\frac{Ax+C}{2\sqrt{1+x-x^2}}+\frac{\lambda}{\sqrt{1+x-x^2}}$$
+$$\int\frac{1-x+x^2}{\sqrt{1+x-x^2}}=-\frac{1}{2}(x+1){\sqrt{1+x-x^2}}+\int\frac{7dx}{4{\sqrt{1+x-x^2}}}=$$
+$$=-\frac{1}{4}(x+1){\sqrt{1+x-x^2}}+\frac{11}{8}\arcsin\left(\frac{2\sqrt{5}x-\sqrt{5}}{5}\right)+C$$
+\section*{C2.3.18}3)$$\int\frac{\sqrt[3]{1+\sqrt[4]{x}}dx}{\sqrt{x}}=\int\frac{\sqrt{1+t}}{t^2}4t^3dt=\int4t\sqrt{1+t}dt=\int3s^3(4s^3-4)ds=\frac{12}{7}s^7-3s^4+C=$$
+$$=\frac{12}{4}(1+\sqrt[4]{x})^{7/3}-3(1+\sqrt[4]{x})^{4/3}+C$$
+\section*{C2.3.19}2)$$\int\frac{dx}{x^3\sqrt[3]{2-x^3}}=\frac{1}{2}\int\frac{x^4t^2dt}{x^4t}=\frac{1}{4}t^2+C=\frac{1}{3}\sqrt[3]{\left(\frac{2-x^3}{x^3}\right)^2}+C$$
+\section*{C2.4.4}1)$$\int\cos^3xdx=\int\cos^2d(\sin x)=\int(1-\sin^2x)d(\sin x)=\sin x-\frac{\sin^3x}{3}+C$$
+\section*{C2.4.15}6)$$\int\frac{dx}{1-\th x}=\int\frac{dt}{(1-t)^2(1+t)}=\frac{1}{4}\int\frac{dt}{1+t}-\frac{1}{4}\int\frac{dt}{1-t}-\frac{1}{2}\int\frac{dt}{(1-t)^2}=$$
+$$=\frac{1}{2}\frac{1}{1-t}+\frac{1}{4}\ln\frac{1+t}{1-t}+C$$
+\section*{C2.4.16}1)$$\int\frac{dx}{2\cos^2x+\sin x\cos x+\sin^2x}=\int\frac{d(\tg x)}{2+\tg x+\tg^2x}=\frac{2}{\sqrt{7}}\arctg\frac{2\tg x+1}{\sqrt{7}}+C$$
+\section*{C2.4.21}2)$$\int\frac{dx}{4+\cos x}=\int\frac{dx}{3\sin^2\frac{x}{2}+5\cos^2\frac{x}{2}}=\int\frac{2dt}{3t^2+5}=\frac{2}{\sqrt{15}}\arctg\left(\sqrt{\frac{3}{5}}\tg\frac{x}{2}\right)+C$$
+\section*{C2.5.144}$$\int\left(\frac{\sin x}{e^{x}}\right)^2dx=\int e^{-2x}\left(\frac{1}{2}-\frac{\cos 2x}{2}\right)dx=\frac{1}{4}e^{-2x}\sin 2x-\frac{1}{2}\int e^{-2x}d(\cos2x)=$$
+$$=\frac{1}{4}e^{-2x}\sin 2x-\frac{1}{4}e^{-2x}\cos 2x+\frac{1}{2}\int e^{-2x}\cos2xdx$$
+$$\int e^{-2x}\frac{\cos 2x}{2}dx=\frac{e^{-2x}}{8}\left(\sin 2x-\cos 2x\right)+C$$
+$$\int\left(\frac{\sin x}{e^{x}}\right)^2dx=\frac{e^{-2x}}{8}\left(\cos 2x-\sin 2x-2\right)+C$$
+\section*{C2.5.180}$$\int\frac{\arcsin xdx}{(1-x^2)\sqrt{1-x^2}}=\int\frac{\arcsin xd(\arcsin x)}{1-x^2}=\int\frac{tdt}{1-\sin^2t}=\int td(\tg t)=$$
+$$t\tg t-\int\tg tdt=t\tg t+\ln\cos t=\arcsin x\tg\arcsin x+\ln\cos\arcsin x=$$
+$$=\frac{x}{\sqrt{1-x^2}}\arcsin x+\frac{1}{2}ln(1-x^2)$$
+\section*{C2.5.188}$$\int\frac{x^2\arccos(x\sqrt{x})}{(1-x^3)^2}dx=$$
+\section*{C2.13.2}1)$$\sum_{k=1}^{n}\frac{1}{(k+2)(k+3)}=\sum_{k=1}^{n}\frac{1}{k+2}-\sum_{k=1}^{n}\frac{1}{k+3}=\frac{1}{3}-\frac{1}{n+3}$$
+$$S=\frac{1}{3}$$
+\section*{C2.13.10}2)$$\sum_{n=1}^{\infty}a^n\sin n\alpha=\mathrm{Im}\sum_{n=1}^{\infty}a^ne^{in\alpha}=\frac{a\sin\alpha}{1-2a\cos\alpha+a^2}$$
+\section*{C2.14.25}9)$$S=\sum_{n=2}^{\infty}\frac{1}{n^{\alpha}\ln^{\beta}n}$$
+\section*{C2.14.2}6)$$\sum_{n=1}^{\infty}\frac{\ln n+\sin n}{n^2+2\ln n}\le\sum_{n=1}^{\infty}\frac{\sqrt{n}+1}{n^2+0}=\sum_{n=1}^{\infty}\frac{1}{n^{3/2}}+\sum_{n=1}^{\infty}\frac{1}{n^{2}}$$
+Данный ряд сходится.\\
+7)$$\sum_{n=1}^{\infty}\frac{n+2}{n^{2}(4+3\sin\left(\frac{\pi n}{3}\right))}\ge\sum_{n=1}^{\infty}\frac{n+2}{7n^2}=\sum_{n=1}^{\infty}\frac{1}{7n}+\sum_{n=1}^{\infty}\frac{2}{7n^2}$$
+Данный ряд расходится.
+\section*{C2.14.9}6)
+8)
+\section*{C2.14.19}8)$$a_{n}=\frac{(2n)!!}{n!}\arctg\left(\frac{1}{3^n}\right)$$
+$$\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}=\lim_{n\to\infty}\frac{(2(n+1))!!n!\arctg\frac{1}{3^{n+1}}}{(2n)!!(n+1)!\arctg\frac{1}{3^{n}}}=\lim_{n\to\infty}2\frac{\arctg\frac{1}{3^{n+1}}}{\arctg\frac{1}{3^{n}}}=\lim_{n\to\infty}2\frac{3^{n}}{3^{n+1}}=\frac{2}{3}<1$$
+Ряд сходится по признаку Даламбера.
+\section*{C2.14.20}1)$$a_{n}=\frac{(3n)!}{(n!)^34^{3n}}$$
+$$\lim_{n\to\infty}\frac{a_{n+1}}{a_{n}}=\lim_{n\to\infty}\frac{(3(n+1))!(n!)^{3}4^{3n}}{(3n)!((n+1)!)^{3}4^{3(n+1)}}=\lim_{n\to\infty}\frac{(3n+1)(3n+2)(3n+3)}{64(n+1)^3}=$$
+$$=\frac{27}{64}\lim_{n\to\infty}\frac{(n+1/3)(n+2/3)}{(n+1)^2}=\frac{27}{64}<1$$
+Ряд сходится по признаку Даламбера.
+\section*{C2.14.21}6)$$a_{n}=3^{n+1}\left(\frac{n+2}{n+3}\right)^{n^2}$$
+$$\lim_{n\to\infty}\sqrt[n]{a_n}=\lim_{n\to\infty}3^{\frac{n+1}{n}}\left(\frac{n+2}{n+3}\right)^{n}=\frac{3}{e}>1$$
+Ряд расходится по признаку Коши.
+12)$$a_{n}=\left(n\sh \frac{1}{n}\right)^{-n^3}$$
+$$\lim_{n\to\infty}\sqrt[n]{a_n}=\lim_{n\to\infty}\left(n\sh \frac{1}{n}\right)^{-n^2}=\frac{3}{e}>1$$
+\section*{C2.14.38*}Из монотонности последовательности имеем $S_{n}\ge na_n$, откуда:
+$$S_{k+n}-S_{k}\ge(k+n)a_{k+n}-ka_{k}\ge(k+n)a_{k+n}-ka_{k+n}=na_{k+n}$$
+В предельном переходе:
+$$\lim_{k\to\infty}\lim_{n\to\infty}S_{k+n}-S_{k}=0\ge\lim_{k\to\infty}\lim_{n\to\infty}na_{n}=\lim_{n\to\infty}na_{n}\ge\lim_{k\to\infty}\lim_{n\to\infty}na_{k+n}\ge 0$$
+\section*{Т.5}
+\section*{C2.15.3}По признаку Лейбница ряды 4) и 5) сходятся.
+\section*{C2.15.8}3)
+4)$$$$
+\section*{C2.15.9}2)
+\section*{C2.15.15}2*)
+\section*{C2.16.4}1)Следует из аналогиченой теоремы для последовательностей.\\
+2) Контрпример - $c_n=a_n-b_n=a_n-a_n=0$.
+\section*{C2.16.29*}
+\section*{Т.6}
+\section*{Т.7*}
+\end{document}
