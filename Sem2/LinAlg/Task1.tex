@@ -1,0 +1,857 @@
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Линейная Алгебра}
+            
+        \vspace{0.5cm}
+        \LARGE
+        Второй семестр\\
+        Первое задание
+            
+        \vspace{1.5cm}
+            
+        \textbf{Бородулин Егор \\ Б02-204}
+        
+        \vfill
+        
+        \includegraphics[scale = 0.55]{images/DGAP.jpg}
+        
+        \vspace{0.8cm}
+            
+        \Large
+        ФОПФ\\
+        МФТИ\\
+        Долгопрудный\\
+        8.02.2023
+            
+    \end{center}
+\end{titlepage}
+
+\section*{Б20.3}$\ $
+
+3,4) Решим задачу в общем виде:\\
+Пусть для $\pmb\xi=(\xi_1,\cdots,\xi_n)^{T}\in\mathcal{L}_n$ выполняется $$\sum_{\alpha=1}^{n}\xi_{\alpha}=\lambda\in\mathbb{R}$$
+Возьмем два произольных вектора $\pmb v$ и $\pmb u$, для которых выполняется данное условие, тогда их сумма будет записываться так:
+$$\pmb{v}+\pmb{u}=(v_1+u_1,\cdots,v_n+u_n)^{T}$$
+Тогда:
+$$\sum_{\alpha=1}^{n}(v+u)_{\alpha}=\sum_{\alpha=1}^{n}v_{\alpha}+\sum_{\alpha=1}^{n}u_{\alpha}=2\lambda\in\mathbb{K}$$
+Таким образом сумма векторов, удовлетворяющих заданному условию, удовлетворяет данному условию только при $\lambda=0$, заметим, что в этом случае $k\pmb{\xi}$ будет также удовлетворять данному условию, так что только при $\lambda=0$ данное условие будет линейным, а векторы удовлетворяющие ему будут образовывать подпространство в $\mathcal{L}_n$.
+
+Базисом в таком подпространстве можно выбрать векторы вида $e_i=(0,\cdots,0,1,-1,0,\cdots,0)$, где i-тая координата равна 1 (такая система векторов будет действительно линейно независимой, так как в разложении любого вектора из данной системы не могут участвовать "крайние" векторы). Так как базисных векторов $n-1$, то размерность данного подпространства равна $n-1$
+\section*{Б20.4}
+
+2)Пусть два вектора перпендикулярны данной прямой, тогда через них проходит единственная плоскость. Так как оба вектора перпендикулярны данной прямой, то построенная плоскость будет перпендикулярна данной прямой. Сумма любых векторов из данной плоскости и произведение таких на скаляр будет оставаться лежать в данной плоскости, так что они будут образовывать линейное подпространство размерности 2.
+\section*{Б20.6}\label{Б20.6}
+
+2,3) Из свойств сложения матриц и умножения их на элемент из $\mathbb{K}$ следует, что верхнетреугольные матрицы образуют подпространство в пространстве $M_{n\times n}$. Для верхнетреугольных матриц можно выбрать базис из матричных единиц, являющихся также верхнетреугольными матрицами, которых будет $\frac{n(n+1)}{2}$. Так как диагональные матрицы будут частным случаем верхнетреугольных матриц, то они будут тоже образовывать подпространство размерности $n$.
+
+5)Аналогично верхнетреугольным матрицам кососимметричные матрицы образуют подпространство в $M_{n\times n}$, их базисом будут матрицы вида $E_{ij}-E_{ji}$ - всего таких будет $\frac{n(n-1)}{2}$
+\section*{Б20.8}3)
+Так как сумма нечетных многочленов тоже нечетный многочлен, то они образуют подпространство в $\mathcal{P}_n$ с базисными векторами вида $x^{2k+1}$, которых будет $\begin{bmatrix}\frac{n+1}{2}\end{bmatrix}$
+\section*{Б20.14}9)
+$$\begin{pmatrix*}
+    1&1&1&1\\
+    2&2&2&2\\
+    3&3&3&3\\
+    1&1&2&2
+\end{pmatrix*}\rightarrow
+\begin{pmatrix*}
+    1&1&1&1\\
+    0&0&0&0\\
+    0&0&0&0\\
+    1&1&2&2
+\end{pmatrix*}$$
+Базис - $\begin{Bmatrix}(1,1,1,1)^{T},&(1,1,2,2)^{T}\end{Bmatrix}$, откуда размерность равна 2.
+\section*{Б20.18}
+Переход от одной системы векторов к другой осуществляется посредством матрицы линейного оператора. Так как векторов в столько же, сколько в базисе матриц порядка 2, то требуется невырожденность данной матрицы.
+Выпишем элементы матричных единиц в стобцы, получив единичную матрицу:
+$$\begin{pmatrix*}
+    1&2&1&3\\
+    -1&5&1&4\\
+    1&1&0&5\\
+    -1&3&1&7
+\end{pmatrix*}=
+\begin{pmatrix*}
+    1&0&0&0\\
+    0&1&0&0\\
+    0&0&1&0\\
+    0&0&0&1
+\end{pmatrix*}A$$
+Заметим, что для невырожденности A достаточно равенства её ранга её порядку.
+$$\begin{pmatrix*}[r]
+    1&2&1&3\\
+    -1&5&1&4\\
+    1&1&0&5\\
+    -1&3&1&7
+\end{pmatrix*}\rightarrow
+\begin{pmatrix*}[r]
+    1&2&1&3\\
+    0&7&2&7\\
+    0&-1&-1&2\\
+    0&5&2&0
+\end{pmatrix*}\rightarrow
+\begin{pmatrix*}[r]
+    1&0&-1&7\\
+    0&0&-5&21\\
+    0&1&1&-2\\
+    0&0&-3&10
+\end{pmatrix*}
+\rightarrow
+\begin{pmatrix*}[r]
+    1&0&-1&7\\
+    0&0&1&1\\
+    0&1&1&-2\\
+    0&0&-3&10
+\end{pmatrix*}
+\rightarrow
+\begin{pmatrix*}[r]
+    1&0&0&8\\
+    0&0&1&1\\
+    0&1&0&-3\\
+    0&0&0&13
+\end{pmatrix*}$$
+Поэтому данные матрицы, являясь системой векторов, образуют базис в пространстве матриц порядка 2. Используя закон преобразования векторов получаем выражение для $A_{26}$
+$$A^{'}_{26}=A^{-1}A_{26}=\begin{pmatrix*}[r]
+    \frac{13}{37}&\frac{1}{37}&\frac{11}{37}&-\frac{14}{37}\\
+    -\frac{3}{37}&\frac{14}{37}&\frac{6}{37}&-\frac{11}{37}\\
+    \frac{36}{37}&-\frac{20}{37}&-\frac{35}{37}&\frac{21}{37}\\
+    -\frac{2}{37}&\frac{3}{37}&\frac{4}{37}&\frac{5}{37}
+\end{pmatrix*}\begin{pmatrix*}
+    5\\
+    14\\
+    6\\
+    13
+\end{pmatrix*}=(-1,2,-1,1)^{T}$$
+\section*{Б20.20}
+Заметим, что замена $t_1=t-\alpha$ обратима, $t=t_1+
+\alpha$, так что многочлены вида $(t-
+\alpha)^k$ образуют базис в пространстве многочленов.
+Считая координатами многочлена - последовательность коэффициентов, то матрицей перехода к новому базису будет:
+$$((t-\alpha)^{n},\ (t-\alpha)^{n-1},\ \cdots,\ t-\alpha, 1)=
+(t^{n},\ t^{n-1},\ \cdots,\ t, 1)
+\begin{pmatrix*}
+    1&0&\cdots&0&0\\
+    C^{n}_{2}&1&\cdots&0&0\\
+    \vdots&\vdots&\ddots&\vdots&\vdots\\
+    n&n-1&\cdots&1&0\\
+    1&1&\cdots&1&1
+\end{pmatrix*}
+$$
+Так что:
+$$p(t-\alpha)=
+\begin{pmatrix*}
+    1&0&\cdots&0&0\\
+    C^{n}_{2}&1&\cdots&0&0\\
+    \vdots&\vdots&\ddots&\vdots&\vdots\\
+    n&n-1&\cdots&1&0\\
+    1&1&\cdots&1&1
+\end{pmatrix*}^{-1}p(t)
+$$
+
+\section*{Б20.22*}
+3)$$\begin{pmatrix*}
+-3&1&-2\\
+6&-2&4\\
+-15&5&-10
+\end{pmatrix*}x=\textbf{o}\Leftrightarrow\begin{pmatrix*}
+-3&1&-2\\
+0&0&0\\
+0&0&0
+\end{pmatrix*}x=\textbf{o}$$$$a=\alpha\begin{pmatrix*}
+-\frac{1}{3}\\
+1\\
+0
+\end{pmatrix*}\qquad\qquad\qquad\qquad\qquad\qquad b=\beta\begin{pmatrix*}
+\frac{2}{3}\\
+0\\
+1
+\end{pmatrix*}$$
+Так, мы получили уравнение плоскости $-3x+y-2y=0$ в пространстве $\mathbb{R}^3$, базис полученного двумерного пространства можно получить взяв, например, $\alpha=\beta=3$
+$$\begin{pmatrix*}
+-1\\
+3\\
+0
+\end{pmatrix*}\qquad\qquad\qquad\qquad\qquad\qquad\begin{pmatrix*}
+2\\
+0\\
+3
+\end{pmatrix*}$$
+\section*{Б20.23}4)
+Столбцы $c_{166}$ и $c_{196}$ составляют стоблцы фундаментальной матрицы.
+$$x=\Phi h + x_0\Rightarrow Ax=A(\Phi h + x_0)=b\Rightarrow A\Phi h=o\ (\forall h)\Rightarrow A\Phi=O\Rightarrow A\Phi B_{n-r}=O$$
+Под $B_{n-r}$ имеется в виду такая невырожденная (для обратимости) квадратная матрица порядка $n-r$, что $\Phi B_{n-r}$ равна нормальной фундаментальной матрице данной системы, хотя общий вид матриц $A$ задается также решением системы уравнений:
+\begin{equation}
+    \begin{pmatrix*}
+a_{11}&a_{12}&a_{13}&a_{14}\\
+a_{21}&a_{22}&a_{23}&a_{24}\\
+\end{pmatrix*}\begin{pmatrix*}
+1&1\\
+1&2\\
+1&1\\
+1&3
+\end{pmatrix*}=\begin{pmatrix*}
+0&0\\
+0&0
+\end{pmatrix*}
+\label{eqn:SOLE1}
+\end{equation}
+В любом случае, видно, что данные уравнения задают систему уравнений с более чем 4-мя уравнениями с удвоенным количеством переменных, отчего однозначный ответ получить не представляется возможным.\\
+Также можно заметить, что любую матрицу $A$ можно получить учитывая, что она сводится к упрощенной матрице размеров $r\times n$. Так как фундаметнальная матрица имеет размеры $n\times(n-r)$, то по её размерам можно восстановить размеры и вид упрощенной матрицы (подразумеваю матрицу вида \eqref{eqn:SOLE1}). Остальные матрицы коэффициентов и соответствующие им системы, задающие нужное данную фундаментальную матрицу, получаются, как линейные комбинации строк полученной упрощенной матрицы.\\
+Транспонируем уравнение \eqref{eqn:SOLE1}:
+\begin{equation*}\left(
+\begin{pmatrix*}
+a_{11}&a_{12}&a_{13}&a_{14}\\
+a_{21}&a_{22}&a_{23}&a_{24}\\
+\end{pmatrix*}\begin{pmatrix*}
+1&1\\
+1&2\\
+1&1\\
+1&3
+\end{pmatrix*}\right)^{T}=\begin{pmatrix*}
+1&1\\
+1&2\\
+1&1\\
+1&3
+\end{pmatrix*}^{T}
+    \begin{pmatrix*}
+a_{11}&a_{12}&a_{13}&a_{14}\\
+a_{21}&a_{22}&a_{23}&a_{24}\\
+\end{pmatrix*}^{T}=
+\end{equation*}
+\begin{equation}
+=\begin{pmatrix*}
+1&1&1&1\\
+1&2&1&3
+\end{pmatrix*}\begin{pmatrix*}
+a_{11}&a_{21}\\
+a_{12}&a_{22}\\
+a_{13}&a_{23}\\
+a_{14}&a_{24}
+\end{pmatrix*}
+=\begin{pmatrix*}
+0&0\\
+0&0
+\end{pmatrix*}
+\label{eqn:SOLE2}
+\end{equation}
+Иначе говоря, транспонированная нужная матрица коэффициентов является фундаментальной для транспонированной данной фундаментальной матрицы.\\
+Методом Гаусса получаем:
+\begin{equation}
+\begin{pmatrix*}
+1&1&1&1\\
+1&2&1&3
+\end{pmatrix*}\rightarrow\begin{pmatrix*}
+1&1&1&1\\
+0&1&0&2
+\end{pmatrix*}\rightarrow\begin{pmatrix*}
+1&0&1&-1\\
+0&1&0&2
+\end{pmatrix*}\Rightarrow A^{T}=\begin{pmatrix*}[r]
+-1&1\\
+0&-2\\
+1&0\\
+0&1
+\end{pmatrix*}\Rightarrow A=\begin{pmatrix*}[r]
+-1&0&1&0\\
+1&-2&0&1
+\end{pmatrix*}
+\label{eqn:SOLE3}
+\end{equation}
+Опять же, ответ не однозначен.\\
+Задачу можно было решить нахождением обратной матрицы к квадратной матрице снизу фундаментальной:
+$$\begin{pmatrix*}
+1&1\\
+1&2\\
+1&1\\
+1&3
+\end{pmatrix*}{\begin{pmatrix*}[r]
+\frac{3}{2}&-\frac{1}{2}\\
+-\frac{1}{2}&\frac{1}{2}
+\end{pmatrix*}}=\begin{pmatrix*}
+1&0\\
+\frac{1}{2}&\frac{1}{2}\\
+1&0\\
+0&1
+\end{pmatrix*}\Rightarrow A=\begin{pmatrix*}[r]
+1&0&1&0\\
+0&1&-\frac{1}{2}&-\frac{1}{2}
+\end{pmatrix*}$$
+Домножением полученной матрицы на $\begin{pmatrix*}[r]
+-1&0\\
+1&-2\\
+\end{pmatrix*}$
+получаем матрицу из \eqref{eqn:SOLE3}. \\
+В каком-то смысле другие матрицы будут матрицей из \eqref{eqn:SOLE3}, записанной в других базисах.
+\section*{Б20.29}
+а,б) Так как матрица перехода является сторокой, элементами которой являются вектор-столбцы нового базиса в старом, то  при перестановке i-го и j-го базисного вектора в новой системе, то столбцы соответствующих номеров поменяются местами. При перестановке i-го и j-го базисного вектора в старой системе, в матрице перехода переставятся строки соответствующих номеров.
+в)При расположении базисных векторов обеих систем в обратном порядке получается транспонированная матрица.
+\section*{T.1*}
+\section*{T.2*}
+Так как векторное пространство стоится над полем, то аддитивная группа того поля должна быть циклической, а также $\#\mathbb{Z}=\#\mathbb{V}$. Рассмотрим изоморфизм $\varphi:\mathbb{K}\to\mathbb{Z}$.\\
+Пусть $\varphi(k)=1$, $k$ - порождающий элемент $(\mathbb{K},+)$, однако из аксиом поля следует, что $\exists \frac{k}{2}$, из-за чего $2\varphi\left(\frac{k}{2}\right)=1\Rightarrow\varphi\left(\frac{k}{2}\right)\not\in\mathbb{Z}\Rightarrow \varphi \not\in\mathbf{Hom}((\mathbb{Z},+),(\mathbb{K},+))$ - таким образом определить порождающий элемент аддитивной группы поля счетной мощности не представляется возможным. 
+\section*{Б21.2}
+$$P^{2k}(x)=P^{2m+1}(x)=-P^{2m+1}(-x)=-P^{2k}(-x)=-P^{2k}(x)\Rightarrow P^{2k}(x)=0$$
+$$P^{2k}\cap P^{2k+1}={0}$$
+$$P^{n}(x)=\frac{P^{n}(x)+P^{n}(-x)}{2}+\frac{P^{n}(x)-P^{n}(-x)}{2}$$
+$$\frac{P^{n}(x)+P^{n}(-x)}{2}\in P^{2k}$$
+$$\frac{P^{n}(x)-P^{n}(-x)}{2}\in P^{2k+1}$$
+$$P^{2k}+ P^{2k+1}=P^n$$
+$$P^{2k}\otimes P^{2k+1}=P^{n}$$
+\section*{Б21.3*}2)
+$$rk(A)=rk(A^{T})$$
+$$rk(A^{T}x)=n-rk(A^{T})=n-rk(A)$$
+$$a\in A:A^{T}a=\textbf{o}\Leftrightarrow (aa)=0\Leftrightarrow a=\textbf{o}$$
+\section*{Б21.6}5)
+Составляя матрицу перехода к базису $\begin{Bmatrix}
+a_1,&a_2,&b_1,&b_2
+\end{Bmatrix}$:
+\begin{equation*}
+x'=\alpha_1a_1+\alpha_2a_2+\beta_1b_1+\beta_2b_2=S^{-1}x=
+\begin{pmatrix*}[r]
+\frac{29}{16}&\frac{3}{16}&-\frac{1}{2}&\frac{1}{2}\\
+\frac{1}{8}&-\frac{1}{8}&0&0\\
+-\frac{3}{2}&\frac{1}{2}&1&0\\
+\frac{5}{16}&-\frac{5}{16}&-\frac{1}{2}&\frac{1}{2}
+\end{pmatrix*}\begin{pmatrix*}[r]
+1\\
+-7\\
+5\\
+-2
+\end{pmatrix*}=\begin{pmatrix*}[r]
+-1\\
+1\\
+0\\
+-1
+\end{pmatrix*}
+\end{equation*}
+$$x_P=\alpha_1a_1+\alpha_2a_2=-a_1+a_2$$
+\section*{Б21.7}
+5) Векторы $a_1, a_2,a_3$ линейно независимы, так что они порождают арифметическое трехмерное пространство, их можно выбрать, как базис $\langle a_1, a_2, a_3\rangle + \langle b_1, b_2\rangle$. Аналогично можно выбрать векторы из второй системы, как базис пересечения. Размерности получившихся пространств будут соответственно 3 и 2.\\ 
+7) Составим матрицу $\left(a_1,a_2,a_3\ \vline\ b_1,b_2,b_3\right)$:
+$$
+\begin{pmatrix*}[r]
+1&-1&0&\vline&1&3&4\\
+2&8&10&\vline&4&-2&2\\
+1&-6&-5&\vline&-1&6&5\\
+3&5&8&\vline&5&3&8
+\end{pmatrix*}$$
+Заметим, что $a_1+a_2=a_3$ и $b_1+b_2=b_3$, так что исключим их из матрицы, как $o$.
+$$
+\begin{pmatrix*}[r]
+1&0&\vline&1&4\\
+2&10&\vline&4&2\\
+1&-5&\vline&-1&5\\
+3&8&\vline&5&8
+\end{pmatrix*}\rightarrow\begin{pmatrix*}[r]
+1&0&\vline&1&4\\
+0&5&\vline&1&-3\\
+0&-5&\vline&-2&1\\
+0&8&\vline&2&-4
+\end{pmatrix*}\rightarrow\begin{pmatrix*}[r]
+1&0&\vline&1&4\\
+0&5&\vline&1&-3\\
+0&0&\vline&-1&-2\\
+0&4&\vline&1&-2
+\end{pmatrix*}\rightarrow
+$$
+$$
+\rightarrow\begin{pmatrix*}[r]
+1&0&\vline&0&2\\
+0&5&\vline&0&-5\\
+0&0&\vline&-1&-2\\
+0&4&\vline&0&-4
+\end{pmatrix*}\rightarrow
+\begin{pmatrix*}[r]
+1&0&\vline&0&2\\
+0&1&\vline&0&-1\\
+0&0&\vline&-1&-2\\
+0&1&\vline&0&-1
+\end{pmatrix*}\rightarrow\begin{pmatrix*}[r]
+1&0&\vline&0&2\\
+0&1&\vline&0&-1\\
+0&0&\vline&1&2\\
+0&0&\vline&0&0
+\end{pmatrix*}
+$$
+За базис суммы можно взять векторы $a_1,a_2,b_1$ так что размерность суммы равна 3.\\
+\section*{Б21.11}
+Из наличия хотя бы одного вектора, разлогаемого однозначно, следует $\mathcal{P}\cap\mathcal{Q}=o$, иначе, прибавляя нетривиальную линейную комбинацию $o$ к разложению данного вектора, получилось бы отличное от данного разложение.\\
+Так как $\mathcal{P}+\mathcal{Q}=\mathcal{L}$, по формуле Грассмана получаем $\mathrm{dim}\left(\mathcal{P}+\mathcal{Q}\right)=\mathrm{dim}\mathcal{P}+\mathrm{dim}\mathcal{Q}$\\
+$$\blacksquare$$
+\section*{Б21.12}
+1) Из формулы Грассмана следует:\\
+$$\mathrm{dim}\left(\mathcal{P}\cap\mathcal{Q}\right)=\mathrm{dim}\mathcal{P}+\mathrm{dim}\mathcal{Q}-\mathrm{dim}\left(\mathcal{P}+\mathcal{Q}\right)>0$$
+2) $$\mathrm{dim}\left(\mathcal{P}\cap\mathcal{Q}\right)=m$$
+$$\mathrm{dim}\left(\mathcal{P}+\mathcal{Q}\right)=n=m+1$$
+$$m\leq\mathrm{dim}\mathcal{Q}\leq m+1$$
+$$m\leq\mathrm{dim}\mathcal{P}\leq m+1$$
+Так как $\mathrm{dim}:\mathcal{L}\to\mathbb{Z}^{+}$, то:
+$$\mathrm{dim}\mathcal{P}, \mathrm{dim}\mathcal{Q}=\left[\begin{matrix}
+    m,\\
+    m+1;
+\end{matrix}\right.$$
+Так как $\mathrm{dim}\left(\mathcal{P}\cap\mathcal{Q}\right)+\mathrm{dim}\left(\mathcal{P}+\mathcal{Q}\right)=2m+1$, то $\mathrm{dim}\mathcal{P}\neq\mathrm{dim}\mathcal{Q}$.
+Следовательно,
+$$\left[\begin{matrix}
+    \left[\begin{matrix}
+    \mathrm{dim}\mathcal{P}=\mathrm{dim}\left(\mathcal{P}\cap\mathcal{Q}\right),\\
+    \mathrm{dim}\mathcal{Q}=\mathrm{dim}\left(\mathcal{P}+\mathcal{Q}\right);
+\end{matrix}\right.\Rightarrow \mathcal{P}\subset\mathcal{Q}\\
+\\
+    \left[\begin{matrix}
+    \mathrm{dim}\mathcal{Q}=\mathrm{dim}\left(\mathcal{P}\cap\mathcal{Q}\right)\\
+    \mathrm{dim}\mathcal{P}=\mathrm{dim}\left(\mathcal{P}+\mathcal{Q}\right);
+\end{matrix}\right.\Rightarrow \mathcal{Q}\subset\mathcal{P}
+\end{matrix}\right.$$
+$$\blacksquare$$
+\section*{K35.10}
+a) $q^{n}$\\
+b) $\prod_{i=0}^{n-1}\left(q^{n}-q^{i}\right)$\\
+c) $\prod_{i=0}^{n-1}\left(q^{n}-q^{i}\right)$\\
+d) $q^{n^2}-\prod_{i=0}^{n-1}\left(q^{n}-q^{i}\right)$\\
+e) $\frac{\prod_{i=0}^{k-1}\left(q^{n}-q^{i}\right)}{\prod_{i=0}^{k-1}\left(q^{k}-q^{i}\right)}$\\
+f) $q^{n-r}$
+\section*{K35.13}
+а) Контрпример - три прямые на плоскости.\\
+б) $$\forall u\in U\cap(V+W)\hookrightarrow u\in (U\cap V)+(U\cap W)=V+(U\cap W)$$
+$$\forall u\in (U\cap V)+(U\cap W)\hookrightarrow u\in V+W, u\in U\Rightarrow u\in U\cap(V+W)$$
+\section*{T.3}
+
+\section*{T.4}
+Заметим, что существует естественный изоморфизм симметричных матриц с верхнетреугольными (отражение относительно главной диагонали), так что доказанное для симметричных матриц будет верно и для верхнетреугольных.\\
+Объединение базисных векторов в пространстве кососимметричных матриц и симметричных матриц (базис описан в \textbf{Б20.6}) образует базис в пространстве $M_{n\times n}(\mathbb{K})$, так что $$M_{n\times n}(\mathbb{K})=U\otimes W=U\otimes W_1$$
+$$A_{233}=\begin{pmatrix*}[r]
+    1&-1&2\\
+    3&-3&6\\
+    2&-2&4
+\end{pmatrix*}=\begin{pmatrix*}[r]
+    0&-3&-2\\
+    3&0&2\\
+    2&-2&0
+\end{pmatrix*}+\begin{pmatrix*}[r]
+    1&2&4\\
+    0&-3&4\\
+    0&0&4
+\end{pmatrix*}=\begin{pmatrix*}[r]
+    0&-2&0\\
+    2&0&4\\
+    0&-4&0
+\end{pmatrix*}+\begin{pmatrix*}[r]
+    1&1&2\\
+    1&-3&2\\
+    2&2&4
+\end{pmatrix*}$$
+\section*{Б23.6}5)
+$$\varphi(\textbf{x})=\textbf{x}-2(\textbf{x},\textbf{n})\frac{\textbf{n}}{|\textbf{n}|^2}$$
+$$\varphi(\lambda\textbf{x})=\lambda\textbf{x}-2(\lambda\textbf{x},\textbf{n})\frac{\textbf{n}}{|\textbf{n}|^2}=\lambda\textbf{x}-2\lambda(\textbf{x},\textbf{n})\frac{\textbf{n}}{|\textbf{n}|^2}=\lambda\varphi(\textbf{x})$$
+$$\varphi(\textbf{x}+\textbf{y})=\textbf{x}+\textbf{y}+(\textbf{x}+\textbf{y},\textbf{n})\frac{\textbf{n}}{|\textbf{n}|^2}=\textbf{x}+\textbf{y}+(\textbf{x},\textbf{n})\frac{\textbf{n}}{|\textbf{n}|^2}+(\textbf{y},\textbf{n})\frac{\textbf{n}}{|\textbf{n}|^2}=\varphi(\textbf{x})+\varphi(\textbf{y})$$
+$\varphi$ отражает вектор, относительно направления $\textbf{n}$.
+\section*{Б23.9}
+2)$$x=y=z\qquad\qquad (\tau=(1,1,1))$$
+$$\varphi(x)=\frac{(\textbf{x},\tau)}{|\tau|^2}\tau$$
+$$E\overset{\varphi}{\mapsto}\frac{1}{3}\mathbb{1}$$
+\\
+3)$$x+y+z=0\qquad\qquad (\textbf{n}=(1,1,1))$$
+$$\psi(x)= \textbf{x}-\frac{(\textbf{x},\textbf{n})}{|\textbf{n}|^2}\textbf{n}$$
+$$E\overset{\psi}{\mapsto}E-\frac{1}{3}\mathbb{1}$$
+$$\psi=Id_{\mathcal{E}_3}-\varphi$$
+\\
+\section*{Б23.14}
+2)$$\begin{pmatrix*}
+    1&0&0\\
+    0&0&-1\\
+    0&1&0\\
+\end{pmatrix*}$$
+3)Переходя к ортонормированному базису с ортом вдоль данной прямой:
+$$\begin{pmatrix*}
+    1/\sqrt{3}&1/\sqrt{6}&1/\sqrt{2}\\
+    1/\sqrt{3}&-2/\sqrt{6}&0\\
+    1/\sqrt{3}&1/\sqrt{6}&-1/\sqrt{2}\\
+\end{pmatrix*}^{-1}\begin{pmatrix*}
+    1&0&0\\
+    0&-1/2&-\sqrt{3}/2\\
+    0&\sqrt{3}/2&-1/2\\
+\end{pmatrix*}\begin{pmatrix*}
+    1/\sqrt{3}&1/\sqrt{6}&1/\sqrt{2}\\
+    1/\sqrt{3}&-2/\sqrt{6}&0\\
+    1/\sqrt{3}&1/\sqrt{6}&-1/\sqrt{2}\\
+\end{pmatrix*}=$$
+$$=\begin{pmatrix*}
+    1/\sqrt{3}&1/\sqrt{3}&1/\sqrt{3}\\
+    1/\sqrt{6}&-2/\sqrt{6}&1/\sqrt{6}\\
+    1/\sqrt{2}&0&-1/\sqrt{2}\\
+\end{pmatrix*}\begin{pmatrix*}
+    1&0&0\\
+    0&-1/2&-\sqrt{3}/2\\
+    0&\sqrt{3}/2&-1/2\\
+\end{pmatrix*}\begin{pmatrix*}
+    1/\sqrt{3}&1/\sqrt{6}&1/\sqrt{2}\\
+    1/\sqrt{3}&-2/\sqrt{6}&0\\
+    1/\sqrt{3}&1/\sqrt{6}&-1/\sqrt{2}\\
+\end{pmatrix*}=$$
+$$=\begin{pmatrix*}
+    0&1&0\\
+    0&0&1\\
+    1&0&0
+\end{pmatrix*}$$
+\section*{Б23.15}$$\mathcal{L}=\mathcal{L}^{\prime}\otimes\mathcal{L}^{\prime\prime}$$1)
+$$\mathcal{L}\overset{\varphi}{\to}\mathcal{L}^{\prime}\qquad\qquad\qquad\mathrm{ker}\varphi=\mathcal{L}^{\prime\prime}\qquad\qquad\qquad\mathrm{Im}\varphi=\mathcal{L}^{\prime}$$
+\section*{Б23.19}1)
+Предположим, что строки матрицы отображения $A_{m\times n}$ линейно зависимы, тогда $\mathrm{rk}(A)<m$. Возьмем такой базис в отображаемом пространстве, что ненулевые строки матрицы линейного отображения $A^{\prime}$ линейно независимы, тогда отображение не будет сюръективным, откуда следует, что $$\mathrm{rk}A=m$$
+\section*{Б23.24}
+1) Так как $\mathrm{dim}\mathcal{L}=\mathrm{dim}\mathcal{L}^{\prime}$, то матрица $A$ отображения $\varphi$ квадратная. Из доказанного в предыдущем задании следует, что отображение должно быть сюрективным, то есть строчный ранк данной матрицы равен $\mathrm{dim}\mathcal{L}^{\prime}$, и соответственно равен стобцовуму ранку данной матрицы, откуда следует, что данная матрица должна быть невырождена, то есть $$\exists A^{-1}:A^{-1}A\textbf{x}=E\textbf{x}=o\Leftrightarrow \textbf{x}=\textbf{o}$$
+2) Из предыдущего пункта следует $\textbf{x}=A^{-1}\textbf{y}$\\
+3) Из линейности отображения следует, что $\lambda \textbf{x}$ - решение.$$\varphi(\lambda\textbf{x})=\lambda\varphi(\textbf{x})=\lambda \textbf{y}$$
+\section*{Б23.29}5)
+$$A=\begin{pmatrix*}
+    -2&-2&2\\
+    -2&-2&2\\
+    -3&-2&2\\
+    4&-1&1\\
+    6&5&-5\\
+\end{pmatrix*}$$
+Так как последние два столбца связаны выражением $a_2=-a_3$, то $\mathrm{Im}\varphi=\mathrm{span}(a_1,a_2)$.
+$$\mathrm{ker}\varphi=\mathrm{sol}(A\textbf{x}=\textbf{o})$$
+$$\begin{pmatrix*}
+    -2&-2&2\\
+    -2&-2&2\\
+    -3&-2&2\\
+    4&-1&1\\
+    6&5&-5\\
+\end{pmatrix*}\rightarrow\begin{pmatrix*}
+    -2&-2&2\\
+    0&0&0\\
+    0&1&-1\\
+    0&-5&5\\
+    0&-1&1\\
+\end{pmatrix*}\rightarrow\begin{pmatrix*}
+    1&0&0\\
+    0&1&-1\\
+    0&0&0\\
+    0&0&0\\
+    0&0&0\\
+\end{pmatrix*}$$
+$$\mathrm{ker}\varphi=\mathrm{span}(0,1,1)$$
+\section*{Б23.30}1)
+Решим систему уравнений:
+$$\begin{pmatrix*}[r]
+    -1&-5&-4&-3\\
+    2&-1&2&-1\\
+    5&3&8&1\\
+\end{pmatrix*}\begin{pmatrix*}
+    x_1\\
+    x_2\\
+    x_3\\
+    x_4
+\end{pmatrix*}=\begin{pmatrix*}
+    -1\\
+    0\\
+    1
+\end{pmatrix*}$$
+$$\begin{pmatrix*}[r]
+    -1&-5&-4&-3&\vline&-1\\
+    2&-1&2&-1&\vline&0\\
+    5&3&8&1&\vline&1\\
+\end{pmatrix*}\rightarrow\begin{pmatrix*}[r]
+    1&5&4&3&\vline&1\\
+    0&11&6&7&\vline&2\\
+    0&0&0&0&\vline&0\\
+\end{pmatrix*}\rightarrow\begin{pmatrix*}[r]
+    11&55&44&33&\vline&11\\
+    0&11&6&7&\vline&2\\
+    0&0&0&0&\vline&0\\
+\end{pmatrix*}\rightarrow$$
+$$\rightarrow\begin{pmatrix*}[r]
+    11&0&14&-2&\vline&1\\
+    0&11&6&7&\vline&2\\
+    0&0&0&0&\vline&0\\
+\end{pmatrix*}$$
+Полный прообраз будет являться линейной оболочной столбцов фундаментальной матрицы $$\begin{pmatrix*}[r]
+    14&-2\\
+    6&7\\
+    11&0\\
+    0&11\\
+\end{pmatrix*}$$
+\section*{Б23.40}1в)
+Так как $\left(\frac{t^{m}}{m!}\right)^{\prime}=\frac{t^{m-1}}{(m-1)!}$, то:
+$$D=\begin{pmatrix*}
+    0&0&0&\cdots&0&0\\
+    1&0&0&\cdots&0&0\\
+    0&1&0&\cdots&0&0\\
+    0&0&1&\cdots&0&0\\
+    \vdots&\vdots&\vdots&\ddots&\vdots&\vdots\\
+    0&0&0&\cdots&1&0\\
+\end{pmatrix*}$$
+\section*{Б23.62}3) По формуле перехода в новый базис:
+$$A^{'}=S^{-1}AS=\begin{pmatrix*}[r]
+    0&-\frac{1}{3}\\
+    1&1
+\end{pmatrix*}\begin{pmatrix*}[r]
+    5&3\\
+    -3&-1
+\end{pmatrix*}\begin{pmatrix*}[r]
+    3&1\\
+    -3&0
+\end{pmatrix*}=\begin{pmatrix*}[r]
+    2&1\\
+    0&2
+\end{pmatrix*}$$
+\section*{Б23.70}1) Перестановка базисных векторов $a_{i}$ и $a_{j}$ соответствует матрице $S=E-E_{ii}-E_{jj}+E_{ij}+E_{ji}$. Нетрудно проветить, что обратна себе. Домножение на неё справа соответствует перестановке строк с теми же номерами.
+\section*{T.5}
+$$\varphi=\begin{pmatrix*}[r]
+    0&-v_{3}&v_{2}\\
+    -v_{2}&0&-v_{1}\\
+    v_{3}&v_{1}&0\\
+\end{pmatrix*}$$
+Заметим, что следующее сопоставление изоморфизм (перестановка второй и третьей компоненты первой строки):
+$$\begin{pmatrix*}[r]
+    0&-v_{3}&v_{2}\\
+    -v_{2}&0&-v_{1}\\
+    v_{3}&v_{1}&0\\
+\end{pmatrix*}\mapsto\begin{pmatrix*}[r]
+    0&v_{2}&-v_{3}\\
+    -v_{2}&0&-v_{1}\\
+    v_{3}&v_{1}&0\\
+\end{pmatrix*}$$
+Так как сопоставление $\textbf{v}\mapsto\varphi$ - изоморфизм, то
+$$\mathbb{R}^{3}\cong M_{3\times3}(\mathbb{R})$$
+\section*{T.6*}
+a) Заметим, что включение $\mathrm{Ker}\varphi\subset\mathrm{Ker}(\varphi^2)$ выполняется всегда:
+$$\forall u\in\mathrm{Ker}\varphi\hookrightarrow\varphi(\varphi(u))=\varphi(\textbf{o})=\textbf{o}$$
+Докажем, что при условии $V=\mathrm{Ker}\varphi\oplus\mathrm{Im}\varphi$ выполяется обратное включение:
+$$V=\mathrm{Ker}\varphi\oplus\mathrm{Im}\varphi\Leftrightarrow\forall \textbf{v}\in V\ \exists !\ \textbf{u}\in\mathrm{Ker}\varphi,\  \textbf{w}\in\mathrm{Im}\varphi:\textbf{v}=\textbf{u}+\textbf{w}\Rightarrow \varphi(\textbf{v})=\varphi(\textbf{w})\Rightarrow $$
+$$\Rightarrow\forall \textbf{t}\in\mathrm{Im}(\varphi)\hookrightarrow\varphi(\textbf{t})=\varphi(\textbf{g})+\varphi(\textbf{h})=\varphi(\textbf{h}):\textbf{g}\in\mathrm{Ker}(\varphi^2),\ \textbf{h}\in\mathrm{Im}(\varphi^2)\Rightarrow$$
+$$\Rightarrow\forall \textbf{x}\in\mathrm{Ker}(\varphi^2)\hookrightarrow\varphi(\textbf{x})=\textbf{o}=\varphi(\textbf{h})=\varphi^2(\eta)\Rightarrow \textbf{h}=\textbf{o}=\varphi(\eta)\Rightarrow\eta=\textbf{o}\Rightarrow x\in\mathrm{Ker}\varphi$$
+$$\Rightarrow \mathrm{Ker}(\varphi^2)\subset\mathrm{Ker}\varphi\Rightarrow\mathrm{Ker}(\varphi^2)=\mathrm{Ker}\varphi$$
+Для эквивалентности $V=\mathrm{Ker}\varphi\oplus\mathrm{Im}\varphi\Leftrightarrow\mathrm{Ker}(\varphi^2)=\mathrm{Ker}$ докажем следствие в обратную другую сторону от противного.\\
+Пусть $\mathrm{Ker}(\varphi^2)=\mathrm{Ker}$ и $\mathrm{Ker}\varphi\cap\mathrm{Im}\varphi\neq\mathrm{span}\begin{Bmatrix}
+\textbf{o}\end{Bmatrix}$, тогда:
+$$\exists\ \textbf{v}\in V:\textbf{v}\in\mathrm{Ker}\varphi,\ \mathrm{Im}\varphi\Rightarrow\exists \textbf{w}\in V:\varphi(\textbf{w})=\textbf{v}\Rightarrow\varphi^2(\textbf{w})=\textbf{o}\Rightarrow w\in\mathrm{Ker}\varphi\Rightarrow\varphi(\textbf{w})=\textbf{o}\Rightarrow \textbf{v}=\textbf{o}\Rightarrow$$
+$$\Rightarrow\mathrm{Ker}\varphi\oplus\mathrm{Im}\varphi=V$$
+b) Заметим, что $\forall \textbf{v}\in V\hookrightarrow \textbf{v}-\varphi(\textbf{v})=\mathrm{pr}_{\mathrm{Ker}}^{\parallel \mathrm{Im}}\textbf{v}$, действительно:
+$$\varphi(\textbf{v}-\varphi(\textbf{v}))=\varphi(\textbf{v})-\varphi^2(\textbf{v})=\textbf{o}$$
+Пусть $\textbf{w}=\mathrm{pr}_{\mathrm{Im}}^{\parallel \mathrm{Ker}}\textbf{v}$, тогда:
+$$\varphi(\textbf{v})-\varphi^2(\textbf{v})=\textbf{w}-\varphi(\textbf{w})=\textbf{o}$$
+Откуда:
+$$\varphi(\textbf{w})=\textbf{w}$$
+Так как $\textbf{v}=\mathrm{pr}_{\mathrm{Im}}^{\parallel \mathrm{Ker}}\textbf{v}+\mathrm{pr}_{\mathrm{Ker}}^{\parallel \mathrm{Im}}\textbf{v}=\textbf{w}+\textbf{v}-\varphi(\textbf{v})$, то
+$$\varphi(\textbf{v})=\textbf{w}$$
+То есть $\varphi$ - проектор на $\mathrm{Im}$ вдоль $\mathrm{Ker}$.
+\section*{Б23.82*}1) $$\psi\varphi=A_{285}A^{-1}_{289}=\begin{pmatrix*}[r]
+    -1&4&-2\\
+    2&-1&-1\\
+    -1&0&1\\
+\end{pmatrix*}$$
+\section*{Б23.83}1)$$\varphi=\begin{pmatrix*}[r]
+    5&-1\\
+    4&1
+\end{pmatrix*}$$
+$$\varphi^2-6\varphi+9E=(\varphi-3E)^2=O$$
+\section*{Б23.71*}1) Данное утверждение сводится к утверждению о том, что любую невырожденную матрицу можно привести к единичной матрице элементарными преобразованиями строк или столбцов - действительно, так как для матрицы линейного отображения работает формула $B=S^{-1}AT$, то получаем желаемое утверждение.
+\section*{Б23.74*}4)
+\section*{Б23.95*}1)$$\mathrm{rg}\varphi+\mathrm{rg}\psi-m\le\mathrm{rg}(\psi\varphi)\le\min(\mathrm{rg}\varphi,\ \mathrm{rg}\psi)$$
+Считая $\mathcal{L},\ \mathcal{M}$ и $\mathcal{N}$ конечномерными, в них можно всегда выбрать базис, тогда второе неравенство очевидно из аналогичного неравенства для матриц.\\
+Используя формулу Грассмана преобразуем первое неравенство к:
+$$\mathrm{dim}\mathrm{Ker}\varphi+\mathrm{dim}\mathrm{Ker}\psi\ge\mathrm{dim}\mathrm{Ker}(\psi\varphi)$$
+Рассмотрим ограничение $\varphi:\mathrm{Ker}(\psi\varphi)\to\mathrm{Ker}\psi$\\
+Для образа и ядра данного отображения верны вложения:
+$$\varphi\left(\mathrm{Ker}(\psi\varphi)\right)\subset\mathrm{Ker}\psi\qquad\qquad\qquad\mathrm{Ker}\left(\varphi\left(\mathrm{Ker}(\psi\varphi)\right)\right)\subset\mathrm{Ker}\varphi$$
+Переходя к размерностям:
+$$\mathrm{dim}\mathrm{Ker}(\psi\varphi)=\mathrm{dim}\varphi\left(\mathrm{Ker}(\psi\varphi)\right)+\mathrm{dim}\mathrm{Ker}\left(\varphi\left(\mathrm{Ker}(\psi\varphi)\right)\right)\le\mathrm{dim}\mathrm{Ker}\psi+\mathrm{dim}\mathrm{Ker}\varphi$$
+$$\blacksquare$$
+\section*{Б12.28}
+1)$$\begin{pmatrix*}
+    x^{\prime}\\y^{\prime}
+\end{pmatrix*}=A\begin{pmatrix*}
+    x\\y
+\end{pmatrix*}+\begin{pmatrix*}
+    c_1\\c_2
+\end{pmatrix*}$$
+Для неподвижной точки верно:
+$$\begin{pmatrix*}
+    x^{\prime}\\y^{\prime}
+\end{pmatrix*}=\begin{pmatrix*}
+    x\\y
+\end{pmatrix*}$$
+Пусть $A(x_1,y_1)$ и $B(x_2,y_2)$, тогда:$$\begin{pmatrix*}
+    x^{\prime}_2-x^{\prime}_1\\y^{\prime}_2-y^{\prime}_1
+\end{pmatrix*}=A\begin{pmatrix*}
+    x_2-x_1\\y_2-y_1
+\end{pmatrix*}=\begin{pmatrix*}
+    x_2-x_1\\y_2-y_1
+\end{pmatrix*}$$
+То есть точка $(x_2-x_1,y_2-y_1)$ тоже неподвижна. Так как уравение прямой $y=kx+b$:$$(x_2-x_1)A\begin{pmatrix*}
+    1\\k
+\end{pmatrix*}=A\begin{pmatrix*}
+    x_2-x_1\\y_2-y_1
+\end{pmatrix*}=(x_2-x_1)\begin{pmatrix*}
+    1\\k
+\end{pmatrix*}$$
+Сокращая на $(x_2-x_1)$, как на скаляр, получаем, что данное равенство не зависит от выбора точек на прямой, а значит каждая точка является неподвижной.
+$$A\begin{pmatrix*}
+    1\\k
+\end{pmatrix*}=\begin{pmatrix*}
+    1\\k
+\end{pmatrix*}$$
+2*) Заметим, что инвариантные прямые могут не пересекаться в одной точке только при тождественном преобразовании.
+\section*{Б12.40}1)$$\begin{pmatrix*}
+    x^{\ast}\\y^{\ast}
+\end{pmatrix*}=\begin{pmatrix*}
+    a&b\\
+    c&d
+\end{pmatrix*}\begin{pmatrix*}
+    x\\y
+\end{pmatrix*}+\begin{pmatrix*}
+    e\\f
+\end{pmatrix*}$$
+Имея это запишем систему уравнений:
+$$\left\{\begin{matrix}
+    -3=a+e\\
+    5=c+f\\
+    4=b+e\\
+    -3=d+f\\
+    0=a+b+e\\
+    0=c+d+f
+\end{matrix}}\right.\Rightarrow\left\{\begin{matrix}
+    a=-4\\
+    b=3\\
+    c=3\\
+    d=-5\\
+    e=1\\
+    f=2
+\end{matrix}}\right.$$
+Окончательно:
+$$\begin{pmatrix*}
+    x^{\ast}\\y^{\ast}
+\end{pmatrix*}=\begin{pmatrix*}
+    -4&3\\
+    3&5
+\end{pmatrix*}\begin{pmatrix*}
+    x\\y
+\end{pmatrix*}+\begin{pmatrix*}
+    1\\2
+\end{pmatrix*}$$
+\section*{Б12.58}8) Из равенства растояний до прямых от центра квадрата находим другие прямые вида $x+2y+a=0$ и $2x-y+b=0$.
+$$x+2y=0\qquad\qquad x+2y+6=0\qquad\qquad2x-y+1=0\qquad\qquad2x-y+7=0$$
+\section*{Б12.51} Из симметричности гиперболы следует, что начало координат будет неподвижной точкой.
+$$\begin{pmatrix*}
+    x^{\prime}\\y^{\prime}
+\end{pmatrix*}=\begin{pmatrix*}
+    a&b\\
+    c&d
+\end{pmatrix*}\begin{pmatrix*}
+    x\\y
+\end{pmatrix*}$$
+Из $A(5,4)\mapsto B(\sqrt{5},0)$ следует $5c=-4d$ и $5a=\sqrt{5}-4b$.\\
+Также:
+$$\frac{{x^{\prime}}^{2}}{5}-\frac{{y^{\prime}}^{2}}{4}=\frac{a^2x^2+abxy+b^2y^2}{5}-\frac{c^2x^2+cdxy+d^2y^2}{4}=\frac{x^{2}}{5}-\frac{y^{2}}{4}=1$$
+Решая все уравнения вместе, получаем:
+$$\begin{pmatrix*}
+    x^{\prime}\\y^{\prime}
+\end{pmatrix*}=\begin{pmatrix*}
+    \sqrt{5}&-\sqrt{5}\\
+    -\frac{4}{\sqrt{5}}&\sqrt{5}
+\end{pmatrix*}\begin{pmatrix*}
+    x\\y
+\end{pmatrix*}$$
+\section*{Б24.13} Так как характеристичский многочлен данного линейного преобразования будет тоже нечетной степени, то из непрерывности многочленов над $\mathbb{R}$ и разных знаков их пределов при $x\to\pm\infty$ по теореме о промежуточных значениях будет хотя бы один корень, а значит и соответствующий ему собственный вектор.
+\section*{Б24.18}2) При отражении $\mathcal{L}$ параллельно $\mathcal{L}^{\prime\prime}$ подпространство $\mathcal{L}^{\prime\prime}$ будет собственным, его базис будет образовывать систему собственных векторов, переходящих в себя, так что $\lambda=1$, каждый вектор из $\mathcal{L}^{\prime}$ будет переходить в обратный по сложению, так что $\lambda=-1$, его базисные векторы будут собственными.
+\section*{Б24.20}Используя, что у проекторов собственные значения равны либо 1, либо 0 находим собственные векторы и соответствующие им собственные подпространства.\\
+2) Собственными подпространствами будут данная прямая и плоскость перпендикулярная ей.\\
+3) Собственными подпространствами будут данная плоскость и прямая перпендикулярная ей.
+\section*{Б24.22*}
+1) Ранг матрицы $A$ не превосходит 1, так как она является произведением  матриц ранга 1. \\
+Заметим, что $a=(a_1,\cdots,a_n)^{T}$ - собственный вектор данного преобразования.
+$$Aa=aba=(ba)a=\lambda a=a\mathrm{tr}A$$
+Остальные собственные векторы будут соответствовать собственному значению 0, и будут являться столбцами фундаментальной матрицы системы $A\xi=o$. Как изветстно, их будет $n-\mathrm{rk}A=n-1$\\
+2)В прошлом задании было определено, что собственному значению 0 соответствует $n-1$ векторов, что равно размерности соответствующего корневого подпространтсва. Если $\mathrm{tr}A=0$, то корневое подпространство будет той же размерности, в однако кратность значения 0 будет $n$, поэтому при $\mathrm{tr}A=0$ матрица не диагонализируема. (используя это, следующий пункт решается в уме)
+\section*{Б24.30}
+7)$$A=\begin{pmatrix*}
+    1&1\\
+    1&1\\
+\end{pmatrix*}$$
+$$\chi_A(\lambda)=\lambda^2-2\lambda\Rightarrow\left[\begin{matrix}
+    \lambda=0\\
+    \lambda=2
+\end{matrix}\right.$$
+Соответствующие собственные векторы $a_1=(1,1)^{T}$ и $a_2=(-1,1)^{T}$
+$$A^{\prime}=\frac{1}{2}\begin{pmatrix*}
+    1&1\\
+    -1&1\\
+\end{pmatrix*}\begin{pmatrix*}
+    1&1\\
+    1&1\\
+\end{pmatrix*}\begin{pmatrix*}
+    1&-1\\
+    1&1\\
+\end{pmatrix*}=\begin{pmatrix*}
+    2&0\\
+    0&0\\
+\end{pmatrix*}$$
+Данное преобразование соответствует композиции проектора на прямую $y=x$ и удлинения вдоль неё вдвое.\\
+19)$$A=\begin{pmatrix*}
+    4&1&-1\\
+    2&5&-2\\
+    4&4&-1\\
+\end{pmatrix*}$$
+30)
+\section*{Б24.37*}3)
+\section*{Б24.42}1)
+\section*{Б24.53}
+\section*{Б24.55}1)
+\section*{Б24.98*}2)
+\section*{K40.11*}
+\section*{K40.12*}a)
+\section*{T.7}
+\section*{T.8}
+\section*{T.9}
+\section*{T.10*}
+\section*{Б24.70}
+\section*{Б24.68}4)
+\section*{Б24.71*}
+\section*{Б24.74}
+1)
+2*)
+\section*{Б24.77}
+\section*{Б24.78*}
+\section*{T.11}
+\section*{T.12*}
+a)
+b)
+c)
+\section*{Б24.126}5)
+\section*{Б24.127}
+7)
+15)
+18)
+\section*{Б24.141}1)
+\section*{Б24.26}
+1)
+4*)
+\section*{K41.8}
+\section*{K41.17*}
+\section*{K41.18}
+\section*{K41.30*}
+\section*{K41.15*}
+\section*{T.13}
+\section*{T.14*}
+\section*{T.15*}
+\section*{T.16*}
+\section*{T.17*}
+a)
+b)
+c)
+d)
+e)
+f)
+\section*{T.18}
+\section*{T.19}
+\section*{T.20}
+a)
+b)
+\section*{T.21*}
+\end{document}
